@@ -1,0 +1,44 @@
+@include desktop {
+    .welcome {
+        h1 {
+            font-size: get-desktop(115px);
+        }
+
+        ul {
+            li {
+                margin: get-desktop(100px) get-desktop(10px) get-desktop(20px) get-desktop(10px);
+                font-size: get-desktop(30px);
+            }
+        }
+    }
+}
+
+@include tablet {
+    .welcome {
+        h1 {
+            font-size: get-tablet(90px);
+        }
+
+        ul {
+            li {
+                margin: get-tablet(100px) get-tablet(10px) get-tablet(20px) get-tablet(10px);
+                font-size: get-tablet(30px);
+            }
+        }
+    }
+}
+
+@include mobile {
+    .welcome {
+        h1 {
+            font-size: get-mobile(60px);
+        }
+
+        ul {
+            li {
+                margin: get-mobile(100px) get-mobile(10px) get-mobile(20px) get-mobile(10px);
+                font-size: get-mobile(30px);
+            }
+        }
+    }
+}

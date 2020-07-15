@@ -1,0 +1,82 @@
+@mixin mobile {
+    @media only screen and (max-width: 640px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin max-width($bp) {
+    @media only screen and (max-width: $bp) {
+        @content;
+    }
+}
+
+@mixin min-width($bp) {
+    @media only screen and (min-width: $bp) {
+        @content;
+    }
+}
+
+// Rem font size
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+// Icons
+
+@mixin icon {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Calc vw for 640px
+
+@function get-mobile($target) {
+    $vw-context: (640 * 0.01) * 1px;
+
+    @return ($target / $vw-context) * 1vw;
+}
+
+@function get-tablet($target) {
+    $vw-context: (1024 * 0.01) * 1px;
+
+    @return ($target / $vw-context) * 1vw;
+}
+
+@function get-desktop($target) {
+    $vw-context: (1280 * 0.01) * 1px;
+
+    @return ($target / $vw-context) * 1vw;
+}
+
+@function get-custom($target, $width) {
+    $vw-context: ($width * 0.01) * 1px;
+
+    @return ($target / $vw-context) * 1vw;
+}
