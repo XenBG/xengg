@@ -45,6 +45,10 @@
                 position: relative;
                 transition: .3s cubic-bezier(0.13, 0.38, 0.45, 0.94);
 
+                .text {
+                    display: none;
+                }
+
                 .outer {
                     position: absolute;
                     top: 0;
